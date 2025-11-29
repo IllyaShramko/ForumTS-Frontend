@@ -1,0 +1,22 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    padding: 10px 400px;
+    gap: 10px;
+}   
+main h1 {
+    font-size: 24px;
+}
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.homeContainer p {
+    font-size: 20px;
+}
+main p {
+    font-size: 20px;
+}
