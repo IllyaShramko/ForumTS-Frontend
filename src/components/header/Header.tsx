@@ -1,15 +1,19 @@
+import styles from "./header.module.css"
+import logoSvg, { ReactComponent as LogoIcon } from '../../assets/svg/ts.svg'
+import searchSvg, { ReactComponent as SearchIcon } from '../../assets/svg/search.svg'
+import profileSvg, { ReactComponent as ProfileIcon } from '../../assets/svg/profile.svg'
+import languageUa from '../../assets/images/ua.png'
 
-import styles from "./css/header.module.css"
 
 export function Header() {
     return (
         <header className={styles.header}>
-            <div className={styles.iconDiv}>
-                <img className="icon" src="images/ts.svg" alt="ForumTS Icon" />
+            <a href="/" className={styles.iconDiv}>
+                <LogoIcon className={styles.icon}></LogoIcon>
                 <h1>ForumTS</h1>
-            </div>
+            </a>
             <div className={styles.searchDiv}>
-                <img src="images/search.svg" alt="Search Icon"/>
+                <SearchIcon ></SearchIcon>
                 <input className={styles.searchBar} type="text" placeholder="Search..." />
                 <button className={styles.seacrhBtn}>{">"}</button>
             </div>
@@ -21,10 +25,10 @@ export function Header() {
                 </div>
                 <div className={styles.userActions}>
                     <button>
-                        <img className={styles.userAvatar} src="images/profile.svg" alt="User Avatar" />
+                        <ProfileIcon className={styles.userAvatar}></ProfileIcon>
                     </button>
                     <button>
-                        <img className={styles.languageImg} src="images/ua.png"/>
+                        <img className={styles.languageImg} src={languageUa}/>
                     </button>
                 </div>
             </div>
