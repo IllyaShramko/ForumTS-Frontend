@@ -1,9 +1,4 @@
 main {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    flex-direction: column;
-    padding: 10px 400px;
-    gap: 10px;
     min-height: 94vh;
+    width: 100%;
 }   

@@ -1,25 +1,16 @@
-import { Header } from "./components/header/Header";
-import { Main } from "./components/main/Main";
-import { Footer } from "./components/footer/Footer";
-import styles from "./app.module.css"
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Layout } from './components/layout/Layout';
+import { HomePage } from './pages/home/HomePage';
+import { PostsPage } from './pages/posts/PostsPage';
 
 export function App() {
-    return (
-        <div className={styles.body}>   
-            <Header></Header>
-            <Main>
-                <h1>Головна</h1>
-                <div className={styles.homeContainer}>
-                    <p><b>ForumTS</b> — сучасна платформа для обміну думками, обговорень та публікації власних матеріалів.</p>
-                    <p>На головній сторінці користувачі отримують коротке ознайомлення з можливостями форуму та можуть перейти до активних обговорень.</p>
-                    <p>У розділі усіх постів відображаються всі створені записи: заголовок, зображення, короткий опис і кількість лайків. Кожен пост можна відкрити для детального перегляду.</p>
-                    <p>На сторінці конкретного поста доступні повний текст, зображення, лайки та система коментарів. Власники постів можуть редагувати свої публікації.</p>
-                    <p>Система авторизації та реєстрації містить зручні форми з перевіркою даних та обробкою помилок.</p>
-                    <p>На сторінці профілю користувач може переглядати свою інформацію, редагувати базові дані та вийти з акаунта.</p>
-                </div>
-                <p>Перейти до <a href="#">всіх постів</a></p>
-            </Main>
-            <Footer></Footer>
-        </div>
-    )
+    
+    return <BrowserRouter>
+        <Routes>
+            <Route path='/' element={<Layout/>}>
+                <Route path='/' element={<HomePage/>}></Route>
+                <Route path='/posts' element={<PostsPage/>}></Route>
+            </Route>
+        </Routes>
+    </BrowserRouter>
 }

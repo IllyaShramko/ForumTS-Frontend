@@ -3,6 +3,7 @@ import logoSvg, { ReactComponent as LogoIcon } from '../../assets/svg/ts.svg'
 import searchSvg, { ReactComponent as SearchIcon } from '../../assets/svg/search.svg'
 import profileSvg, { ReactComponent as ProfileIcon } from '../../assets/svg/profile.svg'
 import languageUa from '../../assets/images/ua.png'
+import { Link } from "react-router-dom"
 
 
 export function Header() {
@@ -13,14 +14,13 @@ export function Header() {
                 <h1>ForumTS</h1>
             </a>
             <div className={styles.searchDiv}>
-                <SearchIcon ></SearchIcon>
+                <SearchIcon></SearchIcon>
                 <input className={styles.searchBar} type="text" placeholder="Search..." />
-                <button className={styles.seacrhBtn}>{">"}</button>
             </div>
             <div className={styles.otherDiv}>
                 <div className={styles.navLinks}>
-                    <a href="#" className={styles.link}>Головна</a>
-                    <a href="#" className={styles.link}>Всі пости</a>
+                    <Link to="/" className={styles.link}>Головна</Link>
+                    <Link to="/posts" className={styles.link}>Всі пости</Link>
                     <button className={styles.link}>+ Створити пост</button>
                 </div>
                 <div className={styles.userActions}>
