@@ -1,6 +1,5 @@
 import styles from "./header.module.css"
 import logoSvg, { ReactComponent as LogoIcon } from '../../assets/svg/ts.svg'
-import searchSvg, { ReactComponent as SearchIcon } from '../../assets/svg/search.svg'
 import profileSvg, { ReactComponent as ProfileIcon } from '../../assets/svg/profile.svg'
 import languageUa from '../../assets/images/ua.png'
 import { Link } from "react-router-dom"
@@ -13,10 +12,6 @@ export function Header() {
                 <LogoIcon className={styles.icon}></LogoIcon>
                 <h1>ForumTS</h1>
             </a>
-            <div className={styles.searchDiv}>
-                <SearchIcon></SearchIcon>
-                <input className={styles.searchBar} type="text" placeholder="Search..." />
-            </div>
             <div className={styles.otherDiv}>
                 <div className={styles.navLinks}>
                     <Link to="/" className={styles.link}>Головна</Link>

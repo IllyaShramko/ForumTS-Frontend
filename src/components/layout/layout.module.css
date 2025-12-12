@@ -5,6 +5,7 @@
     color: white;
     font-family: sans-serif;
     text-decoration: none;
+    outline: none;
 }
 body {
     background-color: #2B2B2B;

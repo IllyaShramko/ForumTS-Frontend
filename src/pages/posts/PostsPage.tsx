@@ -1,8 +1,5 @@
-import { Link } from 'react-router-dom';
-import styles from './posts.module.css';
+import { PostList } from "../../components/post-list/PostList";
 
 export function PostsPage() {
-    return <div className={styles.container}>
-        
-    </div>
+    return <PostList />
 }

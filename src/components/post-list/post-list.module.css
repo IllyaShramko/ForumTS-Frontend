@@ -1,0 +1,57 @@
+.postList {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 340px;
+}
+.filtersBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.filtersBlock h2 {
+    color: #FFFFFF;
+    font-size: 22px;
+}
+.searchBar {
+    background-color: #191919;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    gap: 4px;
+}
+.searchBar input {
+    background-color: #191919;
+    border: none;
+    color: #FFFFFF;
+    font-size: 14px;
+    width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.selectCategories {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 10px;
+}
+.selectCategories label {
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 94vh;
+    overflow: auto;
+}
+.content::-webkit-scrollbar {
+    display: none;
+}
