@@ -1,10 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Layout } from './components/layout/Layout';
-import { HomePage } from './pages/home/HomePage';
-import { PostsPage } from './pages/posts/PostsPage';
+import { Layout } from './layout';
+import { HomePage } from '../pages/home/HomePage';
+import { PostsPage } from '../pages/posts/PostsPage';
 
-export function App() {
-    
+export function AppRoutes() {
     return <BrowserRouter>
         <Routes>
             <Route path='/' element={<Layout/>}>

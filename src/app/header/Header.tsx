@@ -1,7 +1,6 @@
 import styles from "./header.module.css"
-import logoSvg, { ReactComponent as LogoIcon } from '../../assets/svg/ts.svg'
-import profileSvg, { ReactComponent as ProfileIcon } from '../../assets/svg/profile.svg'
-import languageUa from '../../assets/images/ua.png'
+import { ICONS } from "../../shared/icons"
+import { IMAGES } from "../../shared/images"
 import { Link } from "react-router-dom"
 
 
@@ -9,9 +8,13 @@ export function Header() {
     return (
         <header className={styles.header}>
             <a href="/" className={styles.iconDiv}>
-                <LogoIcon className={styles.icon}></LogoIcon>
+                <ICONS.LogoIcon className={styles.icon}></ICONS.LogoIcon>
                 <h1>ForumTS</h1>
             </a>
+            <div className={styles.searchDiv}>
+                <ICONS.SearchIcon></ICONS.SearchIcon>
+                <input className={styles.searchBar} type="text" placeholder="Search..." />
+            </div>
             <div className={styles.otherDiv}>
                 <div className={styles.navLinks}>
                     <Link to="/" className={styles.link}>Головна</Link>
@@ -20,10 +23,10 @@ export function Header() {
                 </div>
                 <div className={styles.userActions}>
                     <button>
-                        <ProfileIcon className={styles.userAvatar}></ProfileIcon>
+                        <ICONS.ProfileIcon className={styles.userAvatar}></ICONS.ProfileIcon>
                     </button>
                     <button>
-                        <img className={styles.languageImg} src={languageUa}/>
+                        <img className={styles.languageImg} src={IMAGES.languageUa}/>
                     </button>
                 </div>
             </div>

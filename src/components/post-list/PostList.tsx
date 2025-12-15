@@ -1,6 +1,6 @@
-import { PostCard } from "../post-card/PostCard";
+import { PostCard } from "./post-card/PostCard";
 import styles from './post-list.module.css';
-import searchSvg, { ReactComponent as SearchIcon } from '../../assets/svg/search.svg'
+import { ICONS } from "../../shared/icons";
 import { useEffect, useState } from "react";
 
 const posts = [
@@ -140,7 +140,7 @@ export function PostList() {
         <div className={styles.filtersBlock}>
             <h2 className={styles.searchText}>Пошук за назвою:</h2>
             <div className={styles.searchBar}>
-                <SearchIcon className={styles.searchIcon}></SearchIcon>
+                <ICONS.SearchIcon className={styles.searchIcon}></ICONS.SearchIcon>
                 <input 
                     value={searchValue} 
                     onChange={event => {
