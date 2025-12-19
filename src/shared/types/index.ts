@@ -1,3 +1,3 @@
-export type { Author } from "./author";
-export type { Product } from "./post";
+export type { User } from "./user";
+export type { Post } from "./post";
 export type { Tag } from "./tag";

@@ -1,0 +1,15 @@
+
+.selectTags {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 10px;
+}
+.selectTags label {
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}

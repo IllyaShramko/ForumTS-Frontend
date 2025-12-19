@@ -1,11 +1,11 @@
-import { Author } from "./author";
+import { User } from "./user";
 
-export interface Product {
+export interface Post {
     id: number,
-    title: string,
-    image: string,
+    name: string,
+    imageUrl?: string,
     description: string,
     tags: number[],
-    author: Author,
-    likes: number
+    createdBy: User,
+    likes: number[]
 }
