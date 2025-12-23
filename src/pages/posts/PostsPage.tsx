@@ -44,29 +44,31 @@ export function PostsPage() {
 
         if (selectedTags.length > 0) {
             foundPosts = foundPosts.filter(post =>
-                post.tags.some(tagId => selectedTags.includes(tagId))
+                post.tags.some(tag => selectedTags.includes(tag.tag.id))
             );
         }
 
         setFilteredPosts(foundPosts);
     }, [posts, searchValue, selectedTags]);
 
-    return <div className={styles.postList}>
-        <div className={styles.filtersBlock}>
-            <h2 className={styles.searchText}>Пошук за назвою:</h2>
-            <div className={styles.searchBar}>
-                <ICONS.SearchIcon className={styles.searchIcon}></ICONS.SearchIcon>
-                <input 
-                    value={searchValue} 
-                    onChange={event => {
-                        setSearchValue(event.target.value)
-                    }} 
-                    type="text"
-                    placeholder="Знайдіть що вам потрібно..." />
+    return <div className={styles.container}>
+        <div className={styles.postList}>
+            <div className={styles.filtersBlock}>
+                <h2 className={styles.searchText}>Пошук за назвою:</h2>
+                <div className={styles.searchBar}>
+                    <ICONS.SearchIcon className={styles.searchIcon}></ICONS.SearchIcon>
+                    <input 
+                        value={searchValue} 
+                        onChange={event => {
+                            setSearchValue(event.target.value)
+                        }} 
+                        type="text"
+                        placeholder="Знайдіть що вам потрібно..." />
+                </div>
+                <h2 className={styles.filtersTitle}>Популярні теги:</h2>
+                <SelectTags selectedTags={selectedTags} setSelectedTags={setSelectedTags} toggleTag={toggleTag}></SelectTags>
             </div>
-            <h2 className={styles.filtersTitle}>Популярні теги:</h2>
-            <SelectTags selectedTags={selectedTags} setSelectedTags={setSelectedTags} toggleTag={toggleTag}></SelectTags>
+            <PostList filteredPosts={filteredPosts}></PostList>      
         </div>
-        <PostList filteredPosts={filteredPosts}></PostList>      
     </div>
 }

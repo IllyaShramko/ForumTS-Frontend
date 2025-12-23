@@ -1,47 +1,15 @@
-import { useEffect, useState } from 'react'
 import styles from './tags-list.module.css'
 import { TagListProps } from './tags.types'
-import { Tag } from '../../shared/types'
-import { data } from 'react-router-dom'
-
+import { useGetTags } from '../../hooks'
 
 export function SelectTags({selectedTags, setSelectedTags, toggleTag}: TagListProps){
-    const [tags, setTags] = useState<Tag[]>([])
-    const [loading, setLoading] = useState<boolean>(false)
-    const [error, setError] = useState<string | null>(null)
-    console.log("Selected Tags:", selectedTags)
-    useEffect(() => {
-        async function getTags() {
-            try {
-                setLoading(true)
-                console.log("Fetching tags...")
-                const response = await fetch("http://localhost:8000/tags", {
-                    method: "GET",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                })
-                const data: Tag[] = await response.json()
-                setTags(data)
-            } catch (error) {
-                console.error(error)
-                if (error instanceof Error) {
-                    setError(error.message)
-                }
-            } finally {
-                setLoading(false)
-            }
-        }
-        getTags()
-    }, [])
-
-    if (loading) {
-        return <div>Loading...</div>
+    const { tags, isLoading, error } = useGetTags()
+    if (isLoading) {
+        return <div>Loading tags...</div>
     }
     if (error) {
-        return <p>{error}</p>
+        return <div>Error to fetch tags</div>
     }
-    
     return (
         <div className={styles.selectTags}>
             <label>

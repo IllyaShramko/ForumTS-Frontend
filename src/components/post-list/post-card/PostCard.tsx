@@ -1,5 +1,6 @@
 import styles from './post-card.module.css'
 import { Tag, User } from '../../../shared/types'
+import { IMAGES } from '../../../shared/images'
 
 interface PostCardProps {
     title: string,
@@ -17,7 +18,7 @@ export function PostCard(props: PostCardProps) {
         <div className={styles.postInformation}>
             <p className={styles.title}>{title}</p>
             <div>
-                <img className={styles.postImage} src={imageUrl} alt="cat"/>
+                <img className={styles.postImage} src={imageUrl} alt={imageUrl}/>
             </div>
             <p className={styles.description}>{description}</p>
             <div className={styles.tags}>
@@ -27,7 +28,7 @@ export function PostCard(props: PostCardProps) {
         <div className={styles.line}></div>
         <div className={styles.postFooter}>
             <div className={styles.author}>
-                <img className={styles.authorAvatar} src={author?.avatar} alt="avatar"/>
+                <img className={styles.authorAvatar} src={author?.avatar ? author?.avatar : IMAGES.defAvatar} alt="avatar"/>
                 <span className={styles.authorName}>{author?.firstName} {author?.secondName}</span>
             </div>
             <div className={styles.likes}>
