@@ -13,12 +13,13 @@ export function PostList({ filteredPosts }: ProductListProps) {
         <div className={styles.content}>
             {filteredPosts?.map(post => 
                 <PostCard 
-                    title={post.name}
+                    id={post.id}
+                    name={post.name}
                     description={post.description}
-                    author={post.createdBy}
+                    createdBy={post.createdBy}
                     imageUrl={post.imageUrl}
-                    tags={post.tags?.map(tag => tag.tag.name)}
-                    likes={post.likes.length}
+                    tags={post.tags}
+                    likes={post.likes}
                 ></PostCard>)}
         </div>        
     </div>
