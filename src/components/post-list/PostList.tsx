@@ -1,10 +1,6 @@
-import { useEffect, useState } from "react";
 import { PostCard } from "./post-card/PostCard";
 import styles from './post-list.module.css';
 import { ProductListProps } from "./post.types";
-import { Tag } from "../../shared/types";
-import { useGetTags } from "../../hooks/use-get-tags";
-
 
 
 

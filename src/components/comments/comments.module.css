@@ -1,0 +1,19 @@
+
+.quillEditor {
+    width: 910px;
+}
+.quillEditor.ql-toolbar {
+    color: black;
+}
+.commentsSection {
+    width: 910px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.commentsList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}

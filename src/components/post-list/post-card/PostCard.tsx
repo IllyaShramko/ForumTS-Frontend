@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'; // Или 'next/link' для Next.js
+import { Link } from 'react-router-dom'
 import styles from './post-card.module.css'
 import { User } from '../../../shared/types'
 import { IMAGES } from '../../../shared/images'

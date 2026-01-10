@@ -5,6 +5,7 @@ import { PostCard } from "../../components/post-list/post-card/PostCard"
 import styles from './post.module.css'
 import ReactQuill from 'react-quill-new';
 import 'react-quill-new/dist/quill.snow.css';
+import { Comments } from "../../components"
 
 
 export function PostPage() {
@@ -30,34 +31,20 @@ export function PostPage() {
         navigate('/posts')
         return null;
     }
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        
-        console.log(content);
-    };
     return <div className={styles.postPage}>
-        <div>
-            <PostCard 
-                id={post.id}
-                name={post.name}
-                description={post.description}
-                createdBy={post.createdBy}
-                imageUrl={post.imageUrl}
-                tags={post.tags}
-                likes={post.likes}
-            />        
-        </div>
-        <div className={styles.commentsSection}>
-            <form onSubmit={handleSubmit}>
-                <ReactQuill 
-                    theme="snow" 
-                    value={content} 
-                    onChange={setContent} 
-                />
-                <button type="submit" style={{ marginTop: '10px' }}>
-                    Отправить данные
-                </button>
-            </form>
+        <div className={styles.postContainer}>
+            <div>
+                <PostCard 
+                    id={post.id}
+                    name={post.name}
+                    description={post.description}
+                    createdBy={post.createdBy}
+                    imageUrl={post.imageUrl}
+                    tags={post.tags}
+                    likes={post.likes}
+                />        
+            </div>
+            <Comments postId={post.id}/>
         </div>
     </div>
     }
